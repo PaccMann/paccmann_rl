@@ -17,6 +17,9 @@ In the repo we provide a conda environment and instructions to reproduce the pip
 - `conda>=3.7`
 - The following data from [here](https://ibm.ent.box.com/v/paccmann-pytoda-data):
   - The processed splitted data from the folder `splitted_data`
+  - The processed gene expression data for GDSC
+    `data/gene_expression/gdsc-rnaseq_gene-expression.csv`
+  - The processed SMILES from the drugs from GDSC `data/smiles/gdsc.smi`
   - A pickled [SMILESLanguage](https://github.com/PaccMann/paccmann_datasets/blob/master/pytoda/smiles/smiles_language.py) object (`data/smiles_language_chembl_gdsc_ccle.pkl`)
   - A pickled list of genes representing the panel considered in the paper (`data/2128_genes.pkl`)
   - A pickled pandas DataFrame containing expression values and metadata for the cell lines considered in the paper (`data/gdsc_transcriptomics_for_conditional_generation.pkl`)
@@ -90,6 +93,7 @@ Now it's all set to run the full pipeline.
 
 ### Multimodal drug sensitivity predictor
 
+```sh
 python3 code/paccmann_predictor/examples/train_paccmann.py \
 data/splitted_data/gdsc_cell_line_ic50_train_fraction_0.9_id_997_seed_42.csv \
 data/splitted_data/gdsc_cell_line_ic50_test_fraction_0.1_id_997_seed_42.csv \
@@ -100,9 +104,11 @@ data/smiles_language_chembl_gdsc_ccle.pkl \
 code/paccmann_predictor/models/ \
 code/paccmann_predictor/examples/example_params.json \ 
 paccmann_model
+```
 
 ### PVAE
 
+``` sh
 python3 code/paccmann_omics/examples/train_vae.py \
 data/splitted_data/tcga_rnaseq_train_fraction_0.9_id_242870585127480531622270373503581547167_seed_42.csv \
 data/splitted_data/tcga_rnaseq_test_fraction_0.1_id_242870585127480531622270373503581547167_seed_42.csv \
@@ -110,10 +116,11 @@ data/2128_genes.pkl \
 code/paccmann_omics/models/ \
 code/paccmann_omics/examples/example_params.json \ 
 pvae
-
+```
 
 ### SVAE
 
+``` sh
 python3 code/paccmann_chemistry/examples/train_vae.py \
 data/splitted_data/train_chembl_22_clean_1576904_sorted_std_final.smi \
 data/splitted_data/test_chembl_22_clean_1576904_sorted_std_final.smi \
@@ -121,9 +128,11 @@ data/smiles_language_chembl_gdsc_ccle.pkl \
 code/paccmann_chemistry/models/ \
 code/paccmann_chemistry/examples/example_params.json \ 
 svae
+```
 
 ### PaccMann^RL
 
+``` sh
 python code/paccmann_generator/examples/train_paccmann_rl.py \
 code/paccmann_chemistry/models/svae_pretrained \
 code/paccmann_omics/models/pvae_pretrained \
@@ -133,7 +142,7 @@ data/gdsc_transcriptomics_for_conditional_generation.pkl \
 code/paccmann_generator/examples/example_params.json \
 paccmann_rl \
 breast
-
+```
 
 ## References
 
