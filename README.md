@@ -82,7 +82,7 @@ mkdir code && cd code && \
 
 Now it's all set to run the full pipeline.
 
-**NOTE:** the workload required to run the full pipeline is intesive and might not be straightforward to run all the steps on a desktop laptop. For this reason, we also provide [pretrained models](https://ibm.ent.box.com/v/paccmann-pytoda-data/folder/91897885403) that can be downloaded and use to run the different steps.
+**NOTE:** the workload required to run the full pipeline is intesive and might not be straightforward to run all the steps on a desktop laptop. For this reason, we also provide [pretrained models](https://ibm.ent.box.com/v/paccmann-pytoda-data/folder/91897885403) that can be downloaded and used to run the different steps.
 
 ### Multimodal drug sensitivity predictor
 
