@@ -1,0 +1,9 @@
+paccmann_predictor @ git+https://git@github.com/PaccMann/paccmann_predictor@0.0.1
+paccmann_omics @ git+https://git@github.com/PaccMann/paccmann_omics@0.0.1
+paccmann_chemistry @ git+https://git@github.com/PaccMann/paccmann_chemistry@0.0.1
+pytoda @ git+https://git@github.com/PaccMann/paccmann_datasets@0.0.1
+numpy>=1.14.3
+pandas>=0.24.1
+torch>=1.0.1
+matplotlib >= 2.2.2
+seaborn>=0.9.0
