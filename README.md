@@ -50,9 +50,13 @@ data
 ├── 2128_genes.pkl
 ├── gdsc_transcriptomics_for_conditional_generation.pkl
 ├── smiles_language_chembl_gdsc_ccle.pkl
+└── gene_expression
+    ├── gdsc-rnaseq_gene-expression.csv
+└── smiles
+    ├── gdsc.smi
 └── splitted_data
-    ├── ccle_ic50_test_fraction_0.1_id_246_seed_42.csv
-    ├── ccle_ic50_train_fraction_0.9_id_246_seed_42.csv
+    ├── gdsc_cell_line_ic50_test_fraction_0.1_id_997_seed_42.csv
+    ├── gdsc_cell_line_ic50_train_fraction_0.9_id_997_seed_42.csv
     ├── tcga_rnaseq_test_fraction_0.1_id_242870585127480531622270373503581547167_seed_42.csv
     ├── tcga_rnaseq_train_fraction_0.9_id_242870585127480531622270373503581547167_seed_42.csv
     ├── test_chembl_22_clean_1576904_sorted_std_final.smi
@@ -86,17 +90,40 @@ Now it's all set to run the full pipeline.
 
 ### Multimodal drug sensitivity predictor
 
-
+python3 code/paccmann_predictor/examples/train_paccmann.py \
+data/splitted_data/gdsc_cell_line_ic50_train_fraction_0.9_id_997_seed_42.csv \
+data/splitted_data/gdsc_cell_line_ic50_test_fraction_0.1_id_997_seed_42.csv \
+data/gene_expression/gdsc-rnaseq_gene-expression.csv \
+data/smiles/gdsc.smi \
+data/2128_genes.pkl \
+data/smiles_language_chembl_gdsc_ccle.pkl \
+code/paccmann_predictor/models/ \
+code/paccmann_predictor/examples/example_params.json \ 
+paccmann_model
 
 ### PVAE
 
+python3 code/paccmann_omics/examples/train_vae.py \
+data/splitted_data/tcga_rnaseq_train_fraction_0.9_id_242870585127480531622270373503581547167_seed_42.csv \
+data/splitted_data/tcga_rnaseq_test_fraction_0.1_id_242870585127480531622270373503581547167_seed_42.csv \
+data/2128_genes.pkl \
+code/paccmann_omics/models/ \
+code/paccmann_omics/examples/example_params.json \ 
+pvae
 
 
 ### SVAE
 
-
+python3 code/paccmann_chemistry/examples/train_vae.py \
+data/splitted_data/train_chembl_22_clean_1576904_sorted_std_final.smi \
+data/splitted_data/test_chembl_22_clean_1576904_sorted_std_final.smi \
+data/smiles_language_chembl_gdsc_ccle.pkl \
+code/paccmann_omics/models/ \
+code/paccmann_chemistry/examples/example_params.json \ 
+svae
 
 ### PaccMann^RL
+
 
 ## References
 
