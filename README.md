@@ -118,11 +118,21 @@ python3 code/paccmann_chemistry/examples/train_vae.py \
 data/splitted_data/train_chembl_22_clean_1576904_sorted_std_final.smi \
 data/splitted_data/test_chembl_22_clean_1576904_sorted_std_final.smi \
 data/smiles_language_chembl_gdsc_ccle.pkl \
-code/paccmann_omics/models/ \
+code/paccmann_chemistry/models/ \
 code/paccmann_chemistry/examples/example_params.json \ 
 svae
 
 ### PaccMann^RL
+
+python code/paccmann_generator/examples/train_paccmann_rl.py \
+code/paccmann_chemistry/models/svae_pretrained \
+code/paccmann_omics/models/pvae_pretrained \
+code/paccmann_predictor/models/paccmann_pretrained \
+data/smiles_language_chembl_gdsc_ccle.pkl \
+data/gdsc_transcriptomics_for_conditional_generation.pkl \
+code/paccmann_generator/examples/example_params.json \
+paccmann_rl \
+breast
 
 
 ## References
