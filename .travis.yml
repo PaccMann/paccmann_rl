@@ -8,8 +8,8 @@ before_script:
   - docker build -f .travis/Dockerfile -t paccmann_rl .
 
 script:
-  - docker run -it generator python3 -c "import pytoda"
-  - docker run -it generator python3 -c "import paccmann_predictor"
-  - docker run -it generator python3 -c "import paccmann_omics"
-  - docker run -it generator python3 -c "import paccmann_chemistry"
-  - docker run -it generator python3 -c "import paccmann_generator"
+  - docker run -it paccmann_rl python3 -c "import pytoda"
+  - docker run -it paccmann_rl python3 -c "import paccmann_predictor"
+  - docker run -it paccmann_rl python3 -c "import paccmann_omics"
+  - docker run -it paccmann_rl python3 -c "import paccmann_chemistry"
+  - docker run -it paccmann_rl python3 -c "import paccmann_generator"
