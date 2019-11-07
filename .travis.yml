@@ -1,15 +1,17 @@
 dist: trusty
-
 services:
-  - docker
-
+- docker
 before_script:
-  - docker pull drugilsberg/rdkit-ubuntu:latest
-  - docker build -f .travis/Dockerfile -t paccmann_rl .
-
+- docker pull drugilsberg/rdkit-ubuntu:latest
+- docker build -f .travis/Dockerfile -t paccmann_rl .
 script:
-  - docker run -it paccmann_rl python3 -c "import pytoda"
-  - docker run -it paccmann_rl python3 -c "import paccmann_predictor"
-  - docker run -it paccmann_rl python3 -c "import paccmann_omics"
-  - docker run -it paccmann_rl python3 -c "import paccmann_chemistry"
-  - docker run -it paccmann_rl python3 -c "import paccmann_generator"
+- docker run -it paccmann_rl python3 -c "import pytoda"
+- docker run -it paccmann_rl python3 -c "import paccmann_predictor"
+- docker run -it paccmann_rl python3 -c "import paccmann_omics"
+- docker run -it paccmann_rl python3 -c "import paccmann_chemistry"
+- docker run -it paccmann_rl python3 -c "import paccmann_generator"
+notifications:
+  slack:
+    secure: NL1nXS3KoLbUy+uwAk4rZrtiWJVxbvdCayHaBO+ZPa5pb/nNbKo5wQss59K6cV2tW+zHRKW1iyJfJ2XA3gtaZzCiLDoEaLAvtMPtLpqV+qdpYfpr8fpB7MFq5P77lOVq/R7noZQkTxnsr1FQOcIRpbCeckY3Av2BQnEBcvXXAojC1O4DDSuIg1pMir8FddXoLcldWzKXfVoZncG0HYxHu0i6F4qGydb1sRLh+Hazvy6307dliDiLDPpOYET+g59VgEXKY3Fp22vOukY6iv3c1Jac6hMFU3wz1peYkZ/ZPIZxoEFgi8+MtHv1CHP2WMqLb7H1kubR0tYoDiyc3BnmvgLYoQI5WQUugrCVBC197jBiJtOsNY+Oh4ZnhNbJ+OM22PmKjHZr4+AGx6FbnwsuzDqzni4h/iblx+dY9OjZEu5oEQluJf0cnz0SC67c943LcuPdKjHfYCoee6d4e843eVoMiQKIMYtVxB3zAf5oqXZY+ap9dSJagC9tkC+gKPUbM8ko1BinkQoJkQinwwFglLEZJDZME3E3reDF7lHQw/gFAWsL/SZ+lc+ATG1UKUHgbzbW17QSG5RLh+HKhtPnLmrM1WG6BVUuxZwSSlwS269E1j+xBnVKs3eE9xLm8EJZPXrvdbA84bquaxc4IL79XDOQyIS3Lb1EhZZUa8vd9No=
+    on_success: always
+    on_failure: always
