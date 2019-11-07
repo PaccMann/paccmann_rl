@@ -1,17 +1,15 @@
 dist: trusty
 services:
-- docker
+  - docker
 before_script:
-- docker pull drugilsberg/rdkit-ubuntu:latest
-- docker build -f .travis/Dockerfile -t paccmann_rl .
+  - docker pull drugilsberg/rdkit-ubuntu:latest
+  - docker build -f .travis/Dockerfile -t paccmann_rl .
 script:
-- docker run -it paccmann_rl python3 -c "import pytoda"
-- docker run -it paccmann_rl python3 -c "import paccmann_predictor"
-- docker run -it paccmann_rl python3 -c "import paccmann_omics"
-- docker run -it paccmann_rl python3 -c "import paccmann_chemistry"
-- docker run -it paccmann_rl python3 -c "import paccmann_generator"
+  - docker run -it paccmann_rl python3 -c "import pytoda"
+  - docker run -it paccmann_rl python3 -c "import paccmann_predictor"
+  - docker run -it paccmann_rl python3 -c "import paccmann_omics"
+  - docker run -it paccmann_rl python3 -c "import paccmann_chemistry"
+  - docker run -it paccmann_rl python3 -c "import paccmann_generator"
 notifications:
   slack:
-    secure: NL1nXS3KoLbUy+uwAk4rZrtiWJVxbvdCayHaBO+ZPa5pb/nNbKo5wQss59K6cV2tW+zHRKW1iyJfJ2XA3gtaZzCiLDoEaLAvtMPtLpqV+qdpYfpr8fpB7MFq5P77lOVq/R7noZQkTxnsr1FQOcIRpbCeckY3Av2BQnEBcvXXAojC1O4DDSuIg1pMir8FddXoLcldWzKXfVoZncG0HYxHu0i6F4qGydb1sRLh+Hazvy6307dliDiLDPpOYET+g59VgEXKY3Fp22vOukY6iv3c1Jac6hMFU3wz1peYkZ/ZPIZxoEFgi8+MtHv1CHP2WMqLb7H1kubR0tYoDiyc3BnmvgLYoQI5WQUugrCVBC197jBiJtOsNY+Oh4ZnhNbJ+OM22PmKjHZr4+AGx6FbnwsuzDqzni4h/iblx+dY9OjZEu5oEQluJf0cnz0SC67c943LcuPdKjHfYCoee6d4e843eVoMiQKIMYtVxB3zAf5oqXZY+ap9dSJagC9tkC+gKPUbM8ko1BinkQoJkQinwwFglLEZJDZME3E3reDF7lHQw/gFAWsL/SZ+lc+ATG1UKUHgbzbW17QSG5RLh+HKhtPnLmrM1WG6BVUuxZwSSlwS269E1j+xBnVKs3eE9xLm8EJZPXrvdbA84bquaxc4IL79XDOQyIS3Lb1EhZZUa8vd9No=
-    on_success: always
-    on_failure: always
+    secure: Zu4URmuBLGtAL/3xWlN9DQ8ZC2ltY1ZIBplLSAyvv27Xs2YifjMbzHdMXQuTab6nipWNw4bqQyUDP5nsVtgQ+QkgjoDYHHk1XiBBntMamYxcZ8KdAhESG52xptIk6Gfgm5TWdE70euUppjVKYNnzSGsrqEZyaabcqb9gyEFIk4jeunSmJLi2ED0OwXWsrot6LUvrkrh44VYGRVf2rVVZYE7WX9expqbK8083S7orTp9XGx2ngMekKD8Z8jA9LOdirD7lNbBbHkEFftoCT7uaOAu5+CcJBHnF7SQrR4H4/fvdrvHztUA8g7Q22mH9hlUGazQzjK+qBUOk9DzyfU5+QY0gMMY7YmyuCMvOXXsydpPCerjWLvLc+BZcWYzKPOpRgEzkY/CCgXBt38nnl80l5ioU0xyH4hlbNf0ALoiSBLtMH+J0jMhhc/tL/R45ACmh3SLNSfkua3mJcO3ZM/+3mRpOV95Ei1Hoiy42YiLFwJsDJgeBCTdP2/iK3bwfpEuY1vPDSr+hXt0FNZqn0jU78/hrkZt8qp2t9dndL1hR+xvHAklKXSofvrd5/EGMJz60c6zX7Gc/LVCxwmDkujeYH3teyklU+QsDJfKe0uwLugKXG6CSyqbb58tF8ziIE3DVNph0mSda5AokshaU+8lLWsfQQI+RLpYZWBcCCwbNpGE=
