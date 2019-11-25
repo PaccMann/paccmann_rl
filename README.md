@@ -146,9 +146,9 @@ Now it's all set to run the full pipeline.
 If you use `paccmann_rl` in your projects, please cite the following:
 
 ```bib
-@misc{born2019reinforcement,
-    title={Reinforcement learning-driven de-novo design of anticancer compounds conditioned on biomolecular profiles},
-    author={Jannis Born and Matteo Manica and Ali Oskooei and Maria Rodriguez Martinez},
+@misc{born2019paccmannrl,
+    title={PaccMann^RL: Designing anticancer drugs from transcriptomic data via reinforcement learning},
+    author={Jannis Born and Matteo Manica and Ali Oskooei and Joris Cadow and María Rodríguez Martínez},
     year={2019},
     eprint={1909.05114},
     archivePrefix={arXiv},
