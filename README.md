@@ -73,10 +73,10 @@ To get the scripts to run each of the component create a `code` folder and clone
 
 ```sh
 mkdir code && cd code && \
-  git clone https://github.com/PaccMann/paccmann_predictor && \ 
-  git clone https://github.com/PaccMann/paccmann_omics && \ 
-  git clone https://github.com/PaccMann/paccmann_chemistry && \ 
-  git clone https://github.com/PaccMann/paccmann_generator && \
+  git clone --branch 0.0.1 https://github.com/PaccMann/paccmann_predictor && \ 
+  git clone --branch 0.0.1 https://github.com/PaccMann/paccmann_omics && \ 
+  git clone --branch 0.0.1 https://github.com/PaccMann/paccmann_chemistry && \ 
+  git clone --branch 0.0.1 https://github.com/PaccMann/paccmann_generator && \
   cd ..
 ```
 
