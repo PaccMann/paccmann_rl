@@ -5,7 +5,7 @@ Pipeline to reproduce the results of the [PaccMann^RL paper](https://arxiv.org/a
 
 ## Description
 
-In the repo we provide a conda environment and instructions to reproduce the pipeline descirbed in the manuscript:
+In the repo we provide a conda environment and instructions to reproduce the pipeline described in the manuscript:
 
 1. Train a multimodal drug sensitivity predictor ([source code](https://github.com/PaccMann/paccmann_predictor))
 2. Train a generative model for omic profiles, also known as the PVAE ([source code](https://github.com/PaccMann/paccmann_omics))
