@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/PaccMann/paccmann_rl.svg?branch=master)](https://travis-ci.org/PaccMann/paccmann_rl)
 # paccmann_rl
 
-Pipeline to reproduce the results of the [PaccMann^RL paper](https://arxiv.org/abs/1909.05114).
+Pipeline to reproduce the results of the [PaccMann<sup>RL</sup> paper](https://www.cell.com/iscience/fulltext/S2589-0042(21)00237-6) published in _iScience_.
 
 ## Description
 
@@ -146,12 +146,17 @@ Now it's all set to run the full pipeline.
 If you use `paccmann_rl` in your projects, please cite the following:
 
 ```bib
-@misc{born2019paccmannrl,
-    title={PaccMann^RL: Designing anticancer drugs from transcriptomic data via reinforcement learning},
-    author={Jannis Born and Matteo Manica and Ali Oskooei and Joris Cadow and María Rodríguez Martínez},
-    year={2019},
-    eprint={1909.05114},
-    archivePrefix={arXiv},
-    primaryClass={q-bio.BM}
+@article{born2021paccmannrl,
+    title = {PaccMann^{RL}: De novo generation of hit-like anticancer molecules from transcriptomic data via reinforcement learning},
+    journal = {iScience},
+    volume = {24},
+    number = {4},
+    pages = {102269},
+    year = {2021},
+    issn = {2589-0042},
+    doi = {https://doi.org/10.1016/j.isci.2021.102269},
+    url = {https://www.cell.com/iscience/fulltext/S2589-0042(21)00237-6},
+    author = {Jannis Born and Matteo Manica and Ali Oskooei and Joris Cadow and Greta Markert and María {Rodríguez Martínez}},
+    keywords = {Complex System Biology, Systems Biology, Transcriptomics, Computer Science}
 }
 ```
