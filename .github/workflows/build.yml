@@ -3,7 +3,20 @@ name: build
 on: [push]
 jobs:
   build:
-    runs-on: [macos-latest, ubuntu-18.04]
+
+    name: Test env setup (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    continue-on-error: ${{ matrix.experimental }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-latest
+            pip_cache_path: ~/.cache/pip
+            experimental: false
+          - os: macos-latest
+            pip_cache_path: ~/Library/Caches/pip
+            experimental: false
     steps:
       - name: Checkout
         uses: actions/checkout@v2
