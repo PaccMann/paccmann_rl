@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/PaccMann/paccmann_rl.svg?branch=master)](https://travis-ci.org/PaccMann/paccmann_rl)
+[![Build Status](https://github.com/PaccMann/paccmann_rl/actions/workflows/build.yml/badge.svg)](https://github.com/PaccMann/paccmann_rl/actions/workflows/build.yml)
 # paccmann_rl
 
 Pipeline to reproduce the results of the [PaccMann<sup>RL</sup> paper](https://www.cell.com/iscience/fulltext/S2589-0042(21)00237-6) published in _iScience_.
