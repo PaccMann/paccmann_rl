@@ -1,3 +1,6 @@
+---
+name: build
+on: [push]
 jobs:
   conda-tests:
     name: Test with conda (${{ matrix.os }})
